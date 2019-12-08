@@ -1,4 +1,4 @@
-package OOP_homework;
+package OOP_homework.Punctul1;
 
 class BiCycle{
     String define_me(){

@@ -1,4 +1,4 @@
-package OOP_homework;
+package OOP_homework.Punctul1;
 
 public class Java_Inheritance_II {
     public static void main(String []args){

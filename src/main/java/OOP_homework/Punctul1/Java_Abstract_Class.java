@@ -1,4 +1,4 @@
-package OOP_homework;
+package OOP_homework.Punctul1;
 
 import java.util.*;
 

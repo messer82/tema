@@ -1,4 +1,4 @@
-package OOP_homework;
+package OOP_homework.Punctul2;
 
 public class Sum100R {
 
