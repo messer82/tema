@@ -6,5 +6,4 @@ public class BankAccount {
         CreateAccount.createAccount();
         AccountBalance.accountBalance();
     }
-
 }

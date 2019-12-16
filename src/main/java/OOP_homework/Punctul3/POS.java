@@ -3,18 +3,14 @@ package OOP_homework.Punctul3;
 import java.util.Scanner;
 
 public class POS extends BankAccount {
-    static void withdrawalPOS() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Do you want to make a withdrawal? Y / N:");
-        String replyWithdrawal = scanner.next();
-
-        if (replyWithdrawal.equals("Y")) {
-            System.out.println("Please input the amount which you want to withdraw: ");
-            int withdrawAmount = scanner.nextInt();
-        }
+    private void cardCheck() {
+        getAccount();
     }
-
-    static void amountCheck() {
+    static int withdrawalPOS() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input the amount you want yo withdraw: ");
+        int withdrawAmount = scanner.nextInt();
+        return withdrawAmount;
 
     }
 }
