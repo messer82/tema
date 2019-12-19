@@ -1,12 +1,10 @@
 package OOP_homework.Punctul2;
 
-import java.util.Scanner;
-
 public class CalculusFactorialR {
-    public static void factorialNumber() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please input the number to calculate factorial: ");
-        int n = scanner.nextInt();
+    public static int factorialNumber(int n) {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Please input the number to calculate factorial: ");
+//        int n = scanner.nextInt();
 
         int a = 1;
 
@@ -14,5 +12,6 @@ public class CalculusFactorialR {
             a = a * i;
         }
         System.out.println("The factorial of " + n + " is: " + a);
+        return a;
     }
 }

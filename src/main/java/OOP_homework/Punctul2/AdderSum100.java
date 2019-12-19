@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class AdderSum100 {
 
-    public static int makeSum() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please input the number for which you want to calculate the sum: ");
-        int x = scanner.nextInt();
+    public static int makeSum(int x) {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Please input the number for which you want to calculate the sum: ");
+//        int x = scanner.nextInt();
 
         int a = 0;
 

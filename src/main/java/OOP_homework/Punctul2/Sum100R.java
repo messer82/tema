@@ -4,6 +4,6 @@ public class Sum100R {
 
     public static void main(String[] args) {
 
-        AdderSum100.makeSum();
+        AdderSum100.makeSum(100);
     }
 }
