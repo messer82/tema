@@ -3,9 +3,8 @@ package OOP_homework.Punctul2;
 import java.util.Scanner;
 
 public class CalculusFactorialR {
-    static void factorialNumber() {
+    public static void factorialNumber() {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Please input the number to calculate factorial: ");
         int n = scanner.nextInt();
 
