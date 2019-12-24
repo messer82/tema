@@ -1,9 +1,13 @@
 package OOP_homework.Punctul3;
 
 public class BankAccount {
+    private String account;
 
-    static void getAccount() {
-        CreateAccount.createAccount();
-        AccountBalance.accountBalance();
+    public String getAccount() {
+        return this.account;
+    }
+
+    public void setAccount(String fAccount) {
+        this.account = fAccount;
     }
 }

@@ -1,15 +1,14 @@
 package OOP_homework.Punctul3;
 
-public class Receipt extends POS {
-    static void printReceipt() {
-        int withdrewAmount = withdrawalPOS();
-        int balance = AccountBalance.accountBalance();
+public class Receipt {
 
-        if (withdrewAmount < balance) {
-            System.out.println("Your receipt will be printed!");
-        } else {
-            System.out.println("Insufficient funds.");
-        }
-        
+    private String receipt;
+
+    public String getReceipt() {
+        return this.receipt;
+    }
+
+    public void setReceipt(String fReceipt) {
+        this.receipt = fReceipt;
     }
 }
