@@ -23,6 +23,20 @@ public class Main {
         BankAccount secondAccount = new BankAccount();
         secondAccount.setAccount(bankReference + a);
 
+
+
+        // aici adaugam bank account-uri pentru userul firstUser
+        firstUser.addBankAccount(firstAccount);
+        firstUser.addBankAccount(secondAccount);
+
+        // printam conturile userului sa ne asiguram ca au fost adaugate
+        // pentru asta avem nevoie sa ne generam si metoda toString() in clasa BankAccount
+        System.out.println("Conturile userului firstUser sunt: " + Arrays.toString(firstUser.getBankAccounts()));
+
+
+
+
+
         String[] accounts = {firstAccount.getAccount() , secondAccount.getAccount()};
 
 //        System.out.println(Arrays.toString(accounts));
@@ -35,6 +49,24 @@ public class Main {
         firstCard.setCard(cardNumber);
         Card secondCard = new Card();
         secondCard.setCard(cardNumber);
+
+
+
+
+        // aici adaugam carduri pentru userul firstUser
+        firstUser.addCard(firstCard);
+        firstUser.addCard(secondCard);
+
+        // printam cardurile userului sa ne asiguram ca au fost adaugate
+        // pentru asta avem nevoie sa ne generam si metoda toString() in clasa Card
+        System.out.println("Conturile userului firstUser sunt: " + Arrays.toString(firstUser.getCards()));
+        // se pot printa si cu un for pentru a nu mai printa null-urile
+//        for (BankAccount ba: firstUser.getBankAccounts()) {
+//            if (ba != null) {
+//                System.out.println(ba);
+//            }
+//        }
+
 
         Long[] cards = {firstCard.getCard() , secondCard.getCard()};
 

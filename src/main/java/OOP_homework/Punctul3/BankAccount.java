@@ -10,4 +10,11 @@ public class BankAccount {
     public void setAccount(String fAccount) {
         this.account = fAccount;
     }
+
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "account='" + account + '\'' +
+                '}';
+    }
 }

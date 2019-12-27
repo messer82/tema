@@ -12,5 +12,10 @@ public class Card {
         this.card = fCard;
     }
 
-
+    @Override
+    public String toString() {
+        return "Card{" +
+                "card=" + card +
+                '}';
+    }
 }
