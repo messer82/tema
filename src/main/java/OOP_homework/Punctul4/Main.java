@@ -31,6 +31,7 @@ public class Main {
         }
     }
 
+//    nu reusesc sa sterg cartea din lista. Teoretic functioneaza, dar practic nu... - apreciez orice sugestie
     private static void removebook() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the title of the book you want to delete: ");
