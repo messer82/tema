@@ -1,9 +1,7 @@
 package OOP_homework.Punctul4;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.awt.print.Book;
+import java.util.*;
 
 public class Catalog {
     private List<Books> collection;
@@ -16,10 +14,6 @@ public class Catalog {
         collection.add(book);
     }
 
-    public void removeBook (String book) {
-        collection.remove(book);
-    }
-
     @Override
     public String toString() {
         String total = "\n";
@@ -30,6 +24,10 @@ public class Catalog {
         return total;
     }
 
+    public void removeIf(boolean book) {
+        collection.removeIf(e -> e.equals(book));
+
+    }
 }
 
 

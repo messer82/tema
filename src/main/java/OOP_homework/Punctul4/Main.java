@@ -35,9 +35,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the title of the book you want to delete: ");
         String name = scanner.next();
-
-        Books books = new Books();
-        catalog.removeBook(name);
+        catalog.removeIf(catalog.equals(name));
     }
 
     private static void addbook() {
