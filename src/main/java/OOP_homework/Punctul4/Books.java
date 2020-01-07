@@ -1,9 +1,50 @@
 package OOP_homework.Punctul4;
 
 
+import java.util.Objects;
+
 public class Books {
     private String title, type;
     private int numberOfPages;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getNumberOfPages() {
+        return numberOfPages;
+    }
+
+    public void setNumberOfPages(int numberOfPages) {
+        this.numberOfPages = numberOfPages;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Books books = (Books) o;
+        return numberOfPages == books.numberOfPages &&
+                Objects.equals(title, books.title) &&
+                Objects.equals(type, books.type);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, type, numberOfPages);
+    }
 
     public Books() {
         title = null;

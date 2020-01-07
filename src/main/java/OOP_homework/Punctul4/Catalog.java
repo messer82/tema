@@ -24,8 +24,8 @@ public class Catalog {
         return total;
     }
 
-    public void removeIf(boolean book) {
-        collection.removeIf(e -> e.equals(book));
+    public void removeIf(String book) {
+        collection.removeIf(book1 -> book1.getTitle().equals(book));
 
     }
 }
