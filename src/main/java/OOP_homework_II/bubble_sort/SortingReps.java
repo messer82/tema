@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class SortingReps {
 
     public static void main(String[] args) {
-        SortRepresentatives sortRepresentatives = new SortRepresentatives(new SortedSalesRepresentatives.SalesRepresentatives[] {
+        SortRepresentatives sortRepresentatives = new SortRepresentatives(new SortedSalesRepresentatives.SalesRepresentatives[]{
                 new SortedSalesRepresentatives.SalesRepresentatives("Adi", 2, 15, 30),
                 new SortedSalesRepresentatives.SalesRepresentatives("Petru", 3, 20, 60),
                 new SortedSalesRepresentatives.SalesRepresentatives("Alina", 4, 10, 40),

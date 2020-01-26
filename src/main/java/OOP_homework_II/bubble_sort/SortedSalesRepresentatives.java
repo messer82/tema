@@ -52,7 +52,7 @@ public class SortedSalesRepresentatives {
                     '}';
         }
 
-        public SalesRepresentatives(String salesPerson, int numberOfSales, int quota, int totalSold){
+        public SalesRepresentatives(String salesPerson, int numberOfSales, int quota, int totalSold) {
             this.salesPerson = salesPerson;
             this.numberOfSales = numberOfSales;
             this.quota = quota;

@@ -17,7 +17,10 @@ public class SortRepresentatives {
     }
 
     private SortedSalesRepresentatives.SalesRepresentatives[] salesRepresentatives;
-    public SortedSalesRepresentatives.SalesRepresentatives[] getSalesRepresentatives() {return salesRepresentatives;}
+
+    public SortedSalesRepresentatives.SalesRepresentatives[] getSalesRepresentatives() {
+        return salesRepresentatives;
+    }
 
     public void sortDescTotalSold() {
         Arrays.sort(salesRepresentatives, Collections.reverseOrder(descTotalSold));
