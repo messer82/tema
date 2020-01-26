@@ -26,4 +26,5 @@ public class SortRepresentatives {
     public SortRepresentatives(SortedSalesRepresentatives.SalesRepresentatives[] salesRepresentatives) {
         this.salesRepresentatives = salesRepresentatives;
     }
+
 }
