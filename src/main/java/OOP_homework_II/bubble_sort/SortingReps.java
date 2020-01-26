@@ -2,6 +2,8 @@ package OOP_homework_II.bubble_sort;
 
 import java.util.Arrays;
 
+//Stiu ca denumirile sunt prost facute, dar din pacate nu m-am gandit in avans la asta...
+
 public class SortingReps {
 
     public static void main(String[] args) {
