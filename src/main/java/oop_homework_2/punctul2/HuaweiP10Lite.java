@@ -1,18 +1,24 @@
 package oop_homework_2.punctul2;
 
-public class HuaweiP10Lite implements Phone {
-    public HuaweiP10Lite() {
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
+public class HuaweiP10Lite implements Phone {
+
+    private List<Contacts> contactsList;
+
+    public HuaweiP10Lite() {
+        contactsList = new ArrayList<>();
     }
 
-    @Override
-    public void addContact() {
-
+    public void addContact(Contacts contacts) {
+        contactsList.add(contacts);
     }
 
     @Override
     public void listContacts() {
-
+        contactsList.forEach(System.out::println);
     }
 
     @Override
@@ -85,6 +91,5 @@ public class HuaweiP10Lite implements Phone {
         Phone phone = new HuaweiP10Lite(((int) Math.random() * 10), "blue", "plastic", (leftLimit + (long) Math.random() * (rightLimit - leftLimit)));
 
     }
-
 
 }

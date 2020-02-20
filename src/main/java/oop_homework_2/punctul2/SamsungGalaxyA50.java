@@ -1,20 +1,27 @@
 package oop_homework_2.punctul2;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class SamsungGalaxyA50 implements Phone {
+
+    private List<Contacts> contactsList;
+
     public SamsungGalaxyA50() {
-
+        contactsList = new ArrayList<Contacts>();
     }
 
-    @Override
-    public void addContact() {
-
+    public void addContact(Contacts contacts) {
+        contactsList.add(contacts);
     }
+
 
     @Override
     public void listContacts() {
-
+        contactsList.forEach(System.out::println);
     }
 
     @Override
@@ -44,6 +51,7 @@ public class SamsungGalaxyA50 implements Phone {
     public int getBatteryLife() {
         return batteryLife;
     }
+
     public void setBatteryLife(int batteryLife) {
         this.batteryLife = batteryLife;
     }
@@ -51,6 +59,7 @@ public class SamsungGalaxyA50 implements Phone {
     public String getColor() {
         return color;
     }
+
     public void setColor(String color) {
         this.color = color;
     }
@@ -58,6 +67,7 @@ public class SamsungGalaxyA50 implements Phone {
     public String getMaterial() {
         return material;
     }
+
     public void setMaterial(String material) {
         this.material = material;
     }
@@ -65,6 +75,7 @@ public class SamsungGalaxyA50 implements Phone {
     public long getImei() {
         return imei;
     }
+
     public void setImei(long imei) {
         this.imei = imei;
     }
@@ -83,4 +94,5 @@ public class SamsungGalaxyA50 implements Phone {
         Phone phone = new SamsungGalaxyA50(((int) Math.random() * 10), "blue", "plastic", (leftLimit + (long) Math.random() * (rightLimit - leftLimit)));
 
     }
+
 }

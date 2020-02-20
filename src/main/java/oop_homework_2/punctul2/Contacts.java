@@ -39,50 +39,13 @@ public class Contacts {
         this.lastName= lastName;
     }
 
-//    public Contacts(Random random) {
-//        this.random = random;
-//    }
-
-//    Random random = new Random();
-//    int randomNumber = 1000 + random.nextInt(9000);
-//    String generatedPhoneNumber = "07" + randomNumber + randomNumber;
-
-    Contacts firstContact = new Contacts("0726464896", "John", "Doe");
-    Contacts secondContact = new Contacts("0763159753", "Jane", "Doe");
-    Contacts thirdContact = new Contacts("0746258963", "Jim", "Doe");
-
-    List<Contacts> contacts = new ArrayList<>();
-
-    public void addContact() {
-        contacts.add(firstContact);
-        contacts.add(secondContact);
-        contacts.add(thirdContact);
-
-    }
-
-    public List<Contacts> getContacts() {
-        return contacts;
-    }
-
-    public void setContacts(List<Contacts> contacts) {
-        this.contacts = contacts;
-    }
-
     @Override
     public String toString() {
         return "Contacts{" +
                 "phoneNumber='" + phoneNumber + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-//                ", random=" + random +
-                ", firstContact=" + firstContact +
-                ", secondContact=" + secondContact +
-                ", thirdContact=" + thirdContact +
-                ", contacts=" + contacts +
                 '}';
     }
 
-    public void listContacts() {
-        System.out.println(Arrays.toString(contacts.toArray()));
-    }
 }
