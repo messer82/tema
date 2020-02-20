@@ -1,6 +1,10 @@
 package oop_homework_2.punctul2;
 
 public class HuaweiP10Lite implements Phone {
+    public HuaweiP10Lite() {
+
+    }
+
     @Override
     public void addContact() {
 
@@ -81,4 +85,6 @@ public class HuaweiP10Lite implements Phone {
         Phone phone = new HuaweiP10Lite(((int) Math.random() * 10), "blue", "plastic", (leftLimit + (long) Math.random() * (rightLimit - leftLimit)));
 
     }
+
+
 }

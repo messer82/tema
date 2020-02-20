@@ -3,6 +3,10 @@ package oop_homework_2.punctul2;
 import java.util.Random;
 
 public class SamsungGalaxyA50 implements Phone {
+    public SamsungGalaxyA50() {
+
+    }
+
     @Override
     public void addContact() {
 
