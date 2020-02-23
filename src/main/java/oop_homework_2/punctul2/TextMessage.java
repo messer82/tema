@@ -1,5 +1,7 @@
 package oop_homework_2.punctul2;
 
+import java.util.Objects;
+
 public class TextMessage {
     private String senderPhoneNumber, textMessage, receiverPhoneNumber;
 
@@ -29,6 +31,30 @@ public class TextMessage {
 
     public void setReceiverPhoneNumber(String receiverPhoneNumber) {
         this.receiverPhoneNumber = receiverPhoneNumber;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TextMessage that = (TextMessage) o;
+        return Objects.equals(senderPhoneNumber, that.senderPhoneNumber) &&
+                Objects.equals(textMessage, that.textMessage) &&
+                Objects.equals(receiverPhoneNumber, that.receiverPhoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(senderPhoneNumber, textMessage, receiverPhoneNumber);
+    }
+
+    @Override
+    public String toString() {
+        return "TextMessage{" +
+                "senderPhoneNumber='" + senderPhoneNumber + '\'' +
+                ", textMessage='" + textMessage + '\'' +
+                ", receiverPhoneNumber='" + receiverPhoneNumber + '\'' +
+                '}';
     }
 
     public TextMessage(String senderPhoneNumber, String textMessage, String receiverPhoneNumber) {

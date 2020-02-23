@@ -10,7 +10,7 @@ public interface Phone {
 
     void listMessages();
 
-    void call();
+    void call(Calls calls);
 
     void viewHistory();
 

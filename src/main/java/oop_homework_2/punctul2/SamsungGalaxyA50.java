@@ -8,6 +8,7 @@ public class SamsungGalaxyA50 implements Phone {
 
     private List<Contacts> contactsList;
     private List<TextMessage> textMessageList;
+    private List<Calls> callsList;
 
     public SamsungGalaxyA50(int batteryLife, String color, String material, long imei) {
         this.batteryLife = batteryLife;
@@ -16,6 +17,7 @@ public class SamsungGalaxyA50 implements Phone {
         this.imei = imei;
         contactsList = new ArrayList<Contacts>();
         textMessageList = new ArrayList<TextMessage>();
+        callsList = new ArrayList<>();
     }
 
     public void addContact(Contacts contacts) {
@@ -37,14 +39,13 @@ public class SamsungGalaxyA50 implements Phone {
         textMessageList.forEach(System.out::println);
     }
 
-    @Override
-    public void call() {
-
+    public void call(Calls calls) {
+        callsList.add(calls);
     }
 
     @Override
     public void viewHistory() {
-
+        callsList.forEach(System.out::println);
     }
 
     private int batteryLife;

@@ -2,12 +2,14 @@ package oop_homework_2.punctul2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class HuaweiP10Lite implements Phone {
 
     private List<Contacts> contactsList;
     private List<TextMessage> textMessageList;
+    private List<Calls> callsList;
 
     public HuaweiP10Lite(int batteryLife, String color, String material, long imei) {
         this.batteryLife = batteryLife;
@@ -16,6 +18,7 @@ public class HuaweiP10Lite implements Phone {
         this.imei = imei;
         contactsList = new ArrayList<>();
         textMessageList = new ArrayList<>();
+        callsList = new ArrayList<>();
     }
 
     public void addContact(Contacts contacts) {
@@ -36,14 +39,41 @@ public class HuaweiP10Lite implements Phone {
         textMessageList.forEach(System.out::println);
     }
 
-    @Override
-    public void call() {
+    public List<Contacts> getContactsList() {
+        return contactsList;
+    }
 
+    public void setContactsList(List<Contacts> contactsList) {
+        this.contactsList = contactsList;
+    }
+
+    public List<TextMessage> getTextMessageList() {
+        return textMessageList;
+    }
+
+    public void setTextMessageList(List<TextMessage> textMessageList) {
+        this.textMessageList = textMessageList;
+    }
+
+    @Override
+    public String toString() {
+        return "HuaweiP10Lite{" +
+                "contactsList=" + contactsList +
+                ", textMessageList=" + textMessageList +
+                ", batteryLife=" + batteryLife +
+                ", color='" + color + '\'' +
+                ", material='" + material + '\'' +
+                ", imei=" + imei +
+                '}';
+    }
+
+    public void call(Calls calls) {
+        callsList.add(calls);
     }
 
     @Override
     public void viewHistory() {
-
+        callsList.forEach(System.out::println);
     }
 
     private int batteryLife;
