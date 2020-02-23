@@ -4,14 +4,14 @@ public interface Phone {
 
     void addContact(Contacts contacts);
 
-    public void listContacts();
+    void listContacts();
 
-    public void sendMessage();
+    void sendMessage(TextMessage textMessage);
 
-    public void listMessages();
+    void listMessages();
 
-    public void call();
+    void call();
 
-    public void viewHistory();
+    void viewHistory();
 
 }

@@ -7,9 +7,15 @@ import java.util.Random;
 public class HuaweiP10Lite implements Phone {
 
     private List<Contacts> contactsList;
+    private List<TextMessage> textMessageList;
 
-    public HuaweiP10Lite() {
+    public HuaweiP10Lite(int batteryLife, String color, String material, long imei) {
+        this.batteryLife = batteryLife;
+        this.color = color;
+        this.material = material;
+        this.imei = imei;
         contactsList = new ArrayList<>();
+        textMessageList = new ArrayList<>();
     }
 
     public void addContact(Contacts contacts) {
@@ -21,14 +27,13 @@ public class HuaweiP10Lite implements Phone {
         contactsList.forEach(System.out::println);
     }
 
-    @Override
-    public void sendMessage() {
-
+    public void sendMessage(TextMessage textMessage) {
+        textMessageList.add(textMessage);
     }
 
     @Override
     public void listMessages() {
-
+        textMessageList.forEach(System.out::println);
     }
 
     @Override
@@ -77,19 +82,19 @@ public class HuaweiP10Lite implements Phone {
         this.imei = imei;
     }
 
-    public HuaweiP10Lite(int batteryLife, String color, String material, long imei) {
-        this.batteryLife = batteryLife;
-        this.color = color;
-        this.material = material;
-        this.imei = imei;
-    }
+//    public HuaweiP10Lite(int batteryLife, String color, String material, long imei) {
+//        this.batteryLife = batteryLife;
+//        this.color = color;
+//        this.material = material;
+//        this.imei = imei;
+//    }
 
-    public void huaweiUse() {
-        long leftLimit = 1L;
-        long rightLimit = 16L;
-
-        Phone phone = new HuaweiP10Lite(((int) Math.random() * 10), "blue", "plastic", (leftLimit + (long) Math.random() * (rightLimit - leftLimit)));
-
-    }
+//    public void huaweiUse() {
+//        long leftLimit = 1L;
+//        long rightLimit = 16L;
+//
+//        Phone phone = new HuaweiP10Lite(((int) (Math.random() * 100)), "blue", "plastic", (leftLimit + (long) Math.random() * (rightLimit - leftLimit)));
+//
+//    }
 
 }

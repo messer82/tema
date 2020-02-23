@@ -1,7 +1,5 @@
 package oop_homework_2.punctul2;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -9,29 +7,34 @@ import java.util.Random;
 public class SamsungGalaxyA50 implements Phone {
 
     private List<Contacts> contactsList;
+    private List<TextMessage> textMessageList;
 
-    public SamsungGalaxyA50() {
+    public SamsungGalaxyA50(int batteryLife, String color, String material, long imei) {
+        this.batteryLife = batteryLife;
+        this.color = color;
+        this.material = material;
+        this.imei = imei;
         contactsList = new ArrayList<Contacts>();
+        textMessageList = new ArrayList<TextMessage>();
     }
 
     public void addContact(Contacts contacts) {
         contactsList.add(contacts);
     }
 
-
     @Override
     public void listContacts() {
         contactsList.forEach(System.out::println);
     }
 
-    @Override
-    public void sendMessage() {
 
+    public void sendMessage(TextMessage textMessage) {
+        textMessageList.add(textMessage);
     }
 
     @Override
     public void listMessages() {
-
+        textMessageList.forEach(System.out::println);
     }
 
     @Override
@@ -80,19 +83,19 @@ public class SamsungGalaxyA50 implements Phone {
         this.imei = imei;
     }
 
-    public SamsungGalaxyA50(int batteryLife, String color, String material, long imei) {
-        this.batteryLife = batteryLife;
-        this.color = color;
-        this.material = material;
-        this.imei = imei;
-    }
+//    public SamsungGalaxyA50(int batteryLife, String color, String material, long imei) {
+//        this.batteryLife = batteryLife;
+//        this.color = color;
+//        this.material = material;
+//        this.imei = imei;
+//    }
 
-    public void samsungUse() {
-        long leftLimit = 1L;
-        long rightLimit = 16L;
-
-        Phone phone = new SamsungGalaxyA50(((int) Math.random() * 10), "blue", "plastic", (leftLimit + (long) Math.random() * (rightLimit - leftLimit)));
-
-    }
+//    public void samsungUse() {
+//        long leftLimit = 1L;
+//        long rightLimit = 16L;
+//
+//        Phone phone = new SamsungGalaxyA50(((int) Math.random() * 10), "blue", "plastic", (leftLimit + (long) Math.random() * (rightLimit - leftLimit)));
+//
+//    }
 
 }

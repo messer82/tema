@@ -1,6 +1,7 @@
 package oop_homework_2.punctul2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -8,33 +9,48 @@ public class PhoneUse {
 
     public static void main(String[] args) {
 //        working progress
+        long leftLimit = 1L;
+        long rightLimit = 16L;
 
-        HuaweiP10Lite huaweiP10Lite = new HuaweiP10Lite();
-        SamsungGalaxyA50 samsungGalaxyA50 = new SamsungGalaxyA50();
-        Contacts contacts = new Contacts();
-
-
-        huaweiP10Lite.listContacts();
+        HuaweiP10Lite huaweiP10Lite = new HuaweiP10Lite(((int) (Math.random() * 10)), "blue", "plastic", (leftLimit + (long) (Math.random() * (rightLimit - leftLimit))));
+        SamsungGalaxyA50 samsungGalaxyA50 = new SamsungGalaxyA50(((int) (Math.random() * 10)), "red", "metal", (leftLimit + (long) (Math.random() * (rightLimit - leftLimit))));
 
         Random random = new Random();
-        int randomNumber = 10000000 + random.nextInt(90000000);
-        String generatedPhoneNumber = "07" + randomNumber;
 
-        Contacts firstContact = new Contacts(generatedPhoneNumber, "John", "Doe");
-        Contacts secondContact = new Contacts(generatedPhoneNumber, "Jane", "Doe");
-        Contacts thirdContact = new Contacts(generatedPhoneNumber, "Jim", "Doe");
+        Contacts firstContact = new Contacts(("07" + (10000000 + random.nextInt(90000000))), "John", "Doe");
+        Contacts secondContact = new Contacts(("07" + (10000000 + random.nextInt(90000000))), "Jane", "Doe");
+        Contacts thirdContact = new Contacts(("07" + (10000000 + random.nextInt(90000000))), "Jim", "Doe");
 
         huaweiP10Lite.addContact(firstContact);
         huaweiP10Lite.addContact(secondContact);
         huaweiP10Lite.addContact(thirdContact);
 
-        huaweiP10Lite.listContacts();
+//        huaweiP10Lite.listContacts();
 
         samsungGalaxyA50.addContact(firstContact);
         samsungGalaxyA50.addContact(secondContact);
         samsungGalaxyA50.addContact(thirdContact);
 
-        samsungGalaxyA50.listContacts();
+//        samsungGalaxyA50.listContacts();
 
+        TextMessage textMessage1 = new TextMessage(firstContact.getPhoneNumber(),"I will call you later.", firstContact.getPhoneNumber());
+        TextMessage textMessage2 = new TextMessage(secondContact.getPhoneNumber(),"I am in a meeting!", firstContact.getPhoneNumber());
+        TextMessage textMessage3 = new TextMessage(thirdContact.getPhoneNumber(),"Talk to you tomorrow.", firstContact.getPhoneNumber());
+
+        if (huaweiP10Lite.getBatteryLife() < 1) {
+            System.out.println("Your phone doesn't have enough battery to send the message. Please recharge it!");
+        }
+        else if (textMessage2.getTextMessage().length() < 500){
+            System.out.println("The available battery life is: " + huaweiP10Lite.getBatteryLife());
+            huaweiP10Lite.sendMessage(textMessage2);
+//            System.out.println(textMessage2.getSenderPhoneNumber() + " " + textMessage2.getTextMessage());
+            huaweiP10Lite.setBatteryLife(huaweiP10Lite.getBatteryLife() - 1);
+            System.out.println("Remaining battery life after sending the text message is: " + huaweiP10Lite.getBatteryLife());;
+
+        } else {
+            System.out.println("The text message exceeds 500 characters. Please input a text of under 500 characters.");
+        }
+
+        huaweiP10Lite.listMessages();
     }
 }
