@@ -3,16 +3,18 @@ package oop_homework_2.punctul2;
 public class Calls {
     private String callerPhoneNumber, contactCalledPhoneNumber, phoneCallDuration;
 
-    public String getCallerPhoneNumber(){
+    public String getCallerPhoneNumber() {
         return callerPhoneNumber;
     }
-    public void setCallerPhoneNumber(String callerPhoneNumber){
+
+    public void setCallerPhoneNumber(String callerPhoneNumber) {
         this.callerPhoneNumber = callerPhoneNumber;
     }
 
     public String getContactCalledPhoneNumber() {
         return contactCalledPhoneNumber;
     }
+
     public void setContactCalledPhoneNumber(String contactCalledPhoneNumber) {
         this.contactCalledPhoneNumber = contactCalledPhoneNumber;
     }
@@ -20,6 +22,7 @@ public class Calls {
     public String getPhoneCallDuration() {
         return phoneCallDuration;
     }
+
     public void setPhoneCallDuration(String phoneCallDuration) {
         this.phoneCallDuration = phoneCallDuration;
     }

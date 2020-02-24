@@ -37,14 +37,13 @@ public class PhoneUse {
 
 //        samsungGalaxyA50.listContacts();
 
-        TextMessage textMessage1 = new TextMessage(firstContact.getPhoneNumber(),"I will call you later.", firstContact.getPhoneNumber());
-        TextMessage textMessage2 = new TextMessage(secondContact.getPhoneNumber(),"I am in a meeting!", firstContact.getPhoneNumber());
-        TextMessage textMessage3 = new TextMessage(thirdContact.getPhoneNumber(),"Talk to you tomorrow.", firstContact.getPhoneNumber());
+        TextMessage textMessage1 = new TextMessage(firstContact.getPhoneNumber(), "I will call you later.", firstContact.getPhoneNumber());
+        TextMessage textMessage2 = new TextMessage(secondContact.getPhoneNumber(), "I am in a meeting!", firstContact.getPhoneNumber());
+        TextMessage textMessage3 = new TextMessage(thirdContact.getPhoneNumber(), "Talk to you tomorrow.", firstContact.getPhoneNumber());
 
         if (huaweiP10Lite.getBatteryLife() < 1) {
             System.out.println("Your phone doesn't have enough battery to send the message. Please recharge it!");
-        }
-        else if (textMessage2.getTextMessage().length() < 500){
+        } else if (textMessage2.getTextMessage().length() < 500) {
 //            System.out.println("The available battery life is: " + huaweiP10Lite.getBatteryLife());
             huaweiP10Lite.sendMessage(textMessage2);
             huaweiP10Lite.setBatteryLife(huaweiP10Lite.getBatteryLife() - 1);
@@ -58,8 +57,7 @@ public class PhoneUse {
 
         if (samsungGalaxyA50.getBatteryLife() < 1) {
             System.out.println("Your phone doesn't have enough battery to send the message. Please recharge it!");
-        }
-        else if (textMessage3.getTextMessage().length() < 500){
+        } else if (textMessage3.getTextMessage().length() < 500) {
 //            System.out.println("The available battery life is: " + samsungGalaxyA50.getBatteryLife());
             samsungGalaxyA50.sendMessage(textMessage3);
             samsungGalaxyA50.setBatteryLife(samsungGalaxyA50.getBatteryLife() - 1);
@@ -79,14 +77,18 @@ public class PhoneUse {
             System.out.println("Your phone doesn't have enough battery to send the message. Please recharge it!");
         } else {
             huaweiP10Lite.call(firstCall);
+            huaweiP10Lite.setBatteryLife(huaweiP10Lite.getBatteryLife() - 2);
+//            System.out.println("Remaining battery life after making the phone call is: " + huaweiP10Lite.getBatteryLife());
         }
 
 //        huaweiP10Lite.viewHistory();
 
-        if (samsungGalaxyA50.getBatteryLife() < 2){
+        if (samsungGalaxyA50.getBatteryLife() < 2) {
             System.out.println("Your phone doesn't have enough battery to send the message. Please recharge it!");
         } else {
             samsungGalaxyA50.call(firstCall);
+            samsungGalaxyA50.setBatteryLife(samsungGalaxyA50.getBatteryLife() - 2);
+            System.out.println("Remaining battery life after making the phone call is: " + samsungGalaxyA50.getBatteryLife());
         }
 
         samsungGalaxyA50.viewHistory();

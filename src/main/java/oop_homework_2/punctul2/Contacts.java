@@ -36,7 +36,7 @@ public class Contacts {
     public Contacts(String phoneNumber, String firstName, String lastName) {
         this.phoneNumber = phoneNumber;
         this.firstName = firstName;
-        this.lastName= lastName;
+        this.lastName = lastName;
     }
 
     @Override
