@@ -6,6 +6,8 @@ import java.util.List;
 public class ExpressionSortingToCm {
     public double expressionSorting(String expression) {
 
+        double result = 0;
+
         ConversionToCm conversion = new ConversionToCm();
         List<Double> conversionToCmList = new ArrayList<>();
 
@@ -37,19 +39,20 @@ public class ExpressionSortingToCm {
         Object[] convertedValues = conversionToCmList.toArray();
 
         if (convertedValues.length == 1) {
-            System.out.println(convertedValues[0] + " cm");
+            result = (double) (convertedValues[0]);
+            System.out.println(result + " cm");
         } else if ((convertedValues.length - 1) != operatorOfExpression.length) {
             System.out.println("Something is wrong at calculus part!");
         } else {
-            double result = ((double) (convertedValues[0]));
+            result = ((double) (convertedValues[0]));
             for (int j = 0; j < convertedValues.length - 1; j++) {
                 result = expressionCalculus.expressionCalculus(result, ((double) (convertedValues[j + 1])), operatorOfExpression[j]);
 
                 if (j == convertedValues.length - 2) {
-                    System.out.println(result + " mm");
+                    System.out.println(result + " cm");
                 }
             }
         }
-        return 0;
+        return result;
     }
 }

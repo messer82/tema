@@ -6,6 +6,8 @@ import java.util.List;
 class ExpressionSortingToMm {
     public double expressionSorting(String expression) {
 
+        double result = 0;
+
         ConversionToMm conversion = new ConversionToMm();
         List<Double> conversionToMmList = new ArrayList<>();
 
@@ -37,11 +39,12 @@ class ExpressionSortingToMm {
         Object[] convertedValues = conversionToMmList.toArray();
 
         if (convertedValues.length == 1) {
-            System.out.println(convertedValues[0] + " mm");
+            result = (double) (convertedValues[0]);
+            System.out.println(result + " mm");
         } else if ((convertedValues.length - 1) != operatorOfExpression.length) {
             System.out.println("Something is wrong at calculus part!");
         } else {
-            double result = ((double) (convertedValues[0]));
+            result = ((double) (convertedValues[0]));
             for (int j = 0; j < convertedValues.length - 1; j++) {
                 result = expressionCalculus.expressionCalculus(result, ((double) (convertedValues[j + 1])), operatorOfExpression[j]);
 
@@ -50,7 +53,7 @@ class ExpressionSortingToMm {
                 }
             }
         }
-        return 0;
+        return result;
     }
 }
 
