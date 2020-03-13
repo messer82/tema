@@ -1,10 +1,11 @@
 package exceptions_and_logging_homework;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Student {
     private String firstName,lastName;
-    private int dateOfBirth;
+    private LocalDate dateOfBirth;
     private String gender;
     private String ID;
 
@@ -52,11 +53,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public int getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(int dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -76,7 +77,7 @@ public class Student {
         this.ID = ID;
     }
 
-    public Student(String firstName, String lastName, int dateOfBirth, String gender, String ID) {
+    public Student(String firstName, String lastName, LocalDate dateOfBirth, String gender, String ID) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;

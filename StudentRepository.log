@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-03-13T19:07:47</date>
+  <millis>1584119267902</millis>
+  <sequence>0</sequence>
+  <logger>sun.rmi.runtime.Log</logger>
+  <level>INFO</level>
+  <class>exceptions_and_logging_homework.StudentRepository</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Start main!</message>
+</record>
+<record>
+  <date>2020-03-13T19:08:36</date>
+  <millis>1584119316737</millis>
+  <sequence>1</sequence>
+  <logger>sun.rmi.runtime.Log</logger>
+  <level>INFO</level>
+  <class>exceptions_and_logging_homework.StudentRepository</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>End main!</message>
+</record>
+</log>
