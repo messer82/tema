@@ -90,6 +90,9 @@ public class StudentRepository {
         String idToBeDeleted = scanner.next();
 
         try {
+            if (!studentList.iterator().next().getID().equalsIgnoreCase(idToBeDeleted(idToBeDeleted))) {
+                System.out.println("Student does not exist!");
+            }
             studentList.removeIf(s -> s.getID().equalsIgnoreCase(idToBeDeleted(idToBeDeleted)));
         } catch (InvalidStudentException e) {
             System.out.println(e);
