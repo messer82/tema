@@ -1,4 +1,4 @@
-package java_8_homework;
+package java_8_homework.punctul1;
 
 import java.util.Arrays;
 import java.util.stream.Stream;
