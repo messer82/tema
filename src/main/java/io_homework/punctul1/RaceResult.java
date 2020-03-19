@@ -1,6 +1,5 @@
 package io_homework.punctul1;
 
-import java.awt.datatransfer.StringSelection;
 import java.time.LocalTime;
 
 public class RaceResult {

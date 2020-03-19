@@ -1,3 +1,7 @@
 athleteNumber,athleteName,countryCode,skiTimeResult,firstShootingRange,secondShootingRange,thirdShootingRange
-23,Ion Ionescu,RO,0:30:15,xxxox,xxxxx,xooxx
-12,George Georgescu,RO,0:28:46,xxxxx,xxxox,xoxxx
+1,Ion Ionescu,RO,0:30:15,xxxox,xxxxx,xooxx
+2,Franz Schmidt,DE,0:28:46,xxxxx,xxxox,xoxxx
+3,Giorgio Benevento,IT,0:29:53,xxoxx,xxxxo,xxxxo
+4,John Doe,US,0:32:17,xxoox,xxxoo,xxxxx
+5,Gyula Meszaros,HU,0:34:15,xxxoo,xooxx,xxxxo
+6,Bjorn Bjornson,SE,0:28:26,xxxxx,xxxxo,xxoxx
