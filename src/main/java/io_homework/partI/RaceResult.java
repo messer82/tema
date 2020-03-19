@@ -1,4 +1,4 @@
-package io_homework.punctul1;
+package io_homework.partI;
 
 import java.time.LocalTime;
 
