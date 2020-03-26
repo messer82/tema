@@ -1,28 +1,51 @@
 package concurrency;
 
 import java.util.Random;
+import java.util.concurrent.BlockingQueue;
 
 public class FestivalGate {
 
-    private int gateNumber;
+    private BlockingQueue<TicketType> queue;
 
-    public int getGateNumber() {
-            return gateNumber;
+    public synchronized void putNewTicketInTheQueue(TicketType ticketType) {
+        while (queue.remainingCapacity() > 0) {
+            try {
+                queue.put(ticketType);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    public void setGateNumber(int gateNumber) {
-            this.gateNumber = gateNumber;
+    public BlockingQueue<TicketType> getQueue() {
+        return queue;
     }
 
-    @Override
-    public String toString() {
-        return "FestivalGate{" +
-                "gateNumber=" + gateNumber +
-                '}';
+    public void setQueue(BlockingQueue<TicketType> queue) {
+        this.queue = queue;
     }
 
-    public int assignGateNumber() {
-        gateNumber = new Random().nextInt(3) + 1;
-        return gateNumber;
-    }
+    //    private int gateNumber;
+//
+//    public int getGateNumber() {
+//            return gateNumber;
+//    }
+//
+//    public void setGateNumber(int gateNumber) {
+//            this.gateNumber = gateNumber;
+//    }
+
+//    @Override
+//    public String toString() {
+//        return "FestivalGate{" +
+//                "gateNumber=" + gateNumber +
+//                '}';
+//    }
+
+
+
+//    public int assignGateNumber() {
+//        gateNumber = new Random().nextInt(3) + 1;
+//        return gateNumber;
+//    }
 }

@@ -6,6 +6,10 @@ import java.util.concurrent.BlockingQueue;
 
 public class FestivalStatisticsThread implements Runnable {
 
+    private FestivalGate festivalGate;
+    public FestivalStatisticsThread(FestivalGate festivalGate){
+        this.festivalGate = festivalGate;
+    }
     protected BlockingQueue<FestivalAttendeeThread> queue;
 
     private List<String> list;
@@ -63,7 +67,7 @@ public class FestivalStatisticsThread implements Runnable {
     private void makeStatistics(int gate) throws InterruptedException {
             System.out.println("At gate " + gate + " " + list.size() + " people entered.");
             list.sort(String::compareTo);
-            int oneDayCount = (int) list.stream().filter(s -> s.equals("one-day")).count();
+            int oneDayCount = (int) festivalGate.getQueue().stream().filter(s -> s.equals("one-day")).count();
             int oneDayVipCount = (int) list.stream().filter(s -> s.equals("one-day-vip")).count();
             int freePassCount = (int) list.stream().filter(s -> s.equals("free-pass")).count();
             int fullCount = (int) list.stream().filter(s -> s.equals("full")).count();
@@ -75,7 +79,7 @@ public class FestivalStatisticsThread implements Runnable {
             System.out.println(fullCount + " people have full pass.");
             System.out.println(fullVipCount + " people have full-vip pass.");
 
-        Thread.sleep(5000);
+        Thread.sleep(50);
     }
 
     public FestivalStatisticsThread(BlockingQueue<FestivalAttendeeThread> queue, int gate) {
