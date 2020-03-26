@@ -1,41 +1,31 @@
 package concurrency;
 
+import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Festival {
 
     public static void main(String[] args) {
 
-        ArrayBlockingQueue queue = new ArrayBlockingQueue<>(1024);
+        BlockingQueue<FestivalAttendeeThread> queue = new ArrayBlockingQueue<>(1024);
+//        ExecutorService service = Executors.newFixedThreadPool(150);
 
-        TicketType ticketType = new TicketType();
-
-        TicketTypeThread ticketTypeThread = new TicketTypeThread(ticketType);
-
-        ticketTypeThread.run();
-
-        FestivalGate festivalGate = new FestivalGate();
-
-        FestivalGateThread festivalGateThread = new FestivalGateThread(festivalGate);
-
-        festivalGateThread.run();
-
-//        FestivalAttendee festivalAttendee = new FestivalAttendee();
-//        FestivalAttendee festivalAttendee = new FestivalAttendee(ticketType.getTicket(), festivalGate.getGateNumber());
-
-        FestivalAtendeeThread festivalAtendeeThread = new FestivalAtendeeThread(queue);
-
-//        while (queue.remainingCapacity() > 0) {
-
-            festivalAtendeeThread.run();
+//        for (int i = 0; i < 256; i++) {
+//            new Thread(new FestivalAttendeeThread(queue)).start();
+//            new Thread(new FestivalAttendeeThread(queue)).start();
+//            new Thread(new FestivalAttendeeThread(queue)).start();
+//            new Thread(new FestivalAttendeeThread(queue)).start();
+////            Thread thread = new Thread(new FestivalAttendeeThread(queue));
+////            thread.start();
+////            service.execute(new FestivalAttendeeThread(queue));
 //        }
 
-        new Thread(festivalAtendeeThread).start();
-
-//        FestivalStatistics festivalStatistics = new FestivalStatistics();
-        FestivalStatisticsThread festivalStatisticsThread = new FestivalStatisticsThread(queue);
-        festivalStatisticsThread.run();
-        new Thread(festivalStatisticsThread).start();
+        new Thread(new FestivalAttendeeThread(queue)).start();
+        
+        new Thread(new FestivalStatisticsThread(queue, new Random().nextInt(3) + 1)).start();
 
     }
 }
