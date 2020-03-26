@@ -2,21 +2,16 @@ package concurrency;
 
 import java.util.Random;
 
-public class FestivalGate{
+public class FestivalGate {
+
     private int gateNumber;
 
-    Random random = new Random();
-
     public int getGateNumber() {
-        synchronized (this) {
             return gateNumber;
-        }
     }
 
     public void setGateNumber(int gateNumber) {
-        synchronized (this) {
             this.gateNumber = gateNumber;
-        }
     }
 
     @Override
@@ -27,7 +22,7 @@ public class FestivalGate{
     }
 
     public int assignGateNumber() {
-        gateNumber = random.nextInt(10);
+        gateNumber = new Random().nextInt(3) + 1;
         return gateNumber;
     }
 }
