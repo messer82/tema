@@ -5,6 +5,14 @@ import java.util.Random;
 public class TicketType {
     private String ticket;
 
+    public TicketType(){
+        this.ticket = randomTicket();
+    }
+
+
+
+
+
     @Override
     public String toString() {
         return "TicketType{" +
