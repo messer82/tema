@@ -10,22 +10,13 @@ public class Festival {
 
     public static void main(String[] args) {
 
-        BlockingQueue<FestivalAttendeeThread> queue = new ArrayBlockingQueue<>(1024);
-        FestivalGate festivalGate = new FestivalGate();
-//        ExecutorService service = Executors.newFixedThreadPool(150);
+        BlockingQueue<TicketType> queue = new ArrayBlockingQueue<>(1024);
+        FestivalGate festivalGate = new FestivalGate(queue);
 
-        for (int i = 0; i < 256; i++) {
             new Thread(new FestivalAttendeeThread(festivalGate)).start();
-            try {
-                Thread.sleep(2);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
 
-//        new Thread(new FestivalAttendeeThread(queue)).start();
-//
-//        new Thread(new FestivalStatisticsThread(queue, new Random().nextInt(3) + 1)).start();
+
+        new Thread(new FestivalStatisticsThread(festivalGate)).start();
 
     }
 }

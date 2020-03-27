@@ -1,21 +1,10 @@
 package concurrency;
 
-import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 
 public class FestivalGate {
 
     private BlockingQueue<TicketType> queue;
-
-    public synchronized void putNewTicketInTheQueue(TicketType ticketType) {
-        while (queue.remainingCapacity() > 0) {
-            try {
-                queue.put(ticketType);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
 
     public BlockingQueue<TicketType> getQueue() {
         return queue;
@@ -25,27 +14,17 @@ public class FestivalGate {
         this.queue = queue;
     }
 
-    //    private int gateNumber;
-//
-//    public int getGateNumber() {
-//            return gateNumber;
-//    }
-//
-//    public void setGateNumber(int gateNumber) {
-//            this.gateNumber = gateNumber;
-//    }
+    public FestivalGate(BlockingQueue<TicketType> queue) {
+        this.queue = queue;
+    }
 
-//    @Override
-//    public String toString() {
-//        return "FestivalGate{" +
-//                "gateNumber=" + gateNumber +
-//                '}';
-//    }
-
-
-
-//    public int assignGateNumber() {
-//        gateNumber = new Random().nextInt(3) + 1;
-//        return gateNumber;
-//    }
+    public synchronized void putNewTicketInTheQueue() {
+        while (true) {
+            try {
+                queue.put(new TicketType());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

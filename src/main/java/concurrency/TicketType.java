@@ -9,10 +9,6 @@ public class TicketType {
         this.ticket = randomTicket();
     }
 
-
-
-
-
     @Override
     public String toString() {
         return "TicketType{" +

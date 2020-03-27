@@ -10,80 +10,37 @@ public class FestivalStatisticsThread implements Runnable {
     public FestivalStatisticsThread(FestivalGate festivalGate){
         this.festivalGate = festivalGate;
     }
-    protected BlockingQueue<FestivalAttendeeThread> queue;
-
-    private List<String> list;
-
-    public List<String> getList() {
-        return list;
-    }
-
-    public void setList(List<String> list) {
-        this.list = list;
-    }
-
-    private int gate;
-
-    public int getGate() {
-        return gate;
-    }
-
-    public void setGate(int gate) {
-        this.gate = gate;
-    }
-
-    List<String> list1 = new LinkedList<>();
-    List<String> list2 = new LinkedList<>();
-    List<String> list3 = new LinkedList<>();
-    List<String> list4 = new LinkedList<>();
+    protected BlockingQueue<TicketType> queue;
 
     @Override
     public void run() {
         try {
             while (true) {
-                FestivalAttendeeThread festivalAttendee = queue.take();
-                if (festivalAttendee.getGate() == 1) {
-                    this.list = list1;
-                    list1.add(festivalAttendee.getTicket());
-                } else if (festivalAttendee.getGate() == 2) {
-                    this.list = list2;
-                    list2.add(festivalAttendee.getTicket());
-                } else if (festivalAttendee.getGate() == 3) {
-                    this.list = list3;
-                    list3.add(festivalAttendee.getTicket());
-                } else {
-                    this.list = list4;
-                    list4.add(festivalAttendee.getTicket());
-                }
-                makeStatistics(gate);
+                makeStatistics();
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
     }
 
-
-
-    private void makeStatistics(int gate) throws InterruptedException {
-            System.out.println("At gate " + gate + " " + list.size() + " people entered.");
-            list.sort(String::compareTo);
-            int oneDayCount = (int) festivalGate.getQueue().stream().filter(s -> s.equals("one-day")).count();
-            int oneDayVipCount = (int) list.stream().filter(s -> s.equals("one-day-vip")).count();
-            int freePassCount = (int) list.stream().filter(s -> s.equals("free-pass")).count();
-            int fullCount = (int) list.stream().filter(s -> s.equals("full")).count();
-            int fullVipCount = (int) list.stream().filter(s -> s.equals("full-vip")).count();
+    private void makeStatistics() throws InterruptedException {
+        Thread.sleep(2000);
+            System.out.println(festivalGate.getQueue().size() + " people entered.");
+            int oneDayCount = (int) festivalGate.getQueue().stream().filter(t -> t.getTicket().equals("one-day")).count();
+//            int oneDayCount = (int) queue.stream().filter(s -> s.equals("one-day")).count();
+            int oneDayVipCount = (int) festivalGate.getQueue().stream().filter(t -> t.getTicket().equals("one-day-vip")).count();
+            int freePassCount = (int) festivalGate.getQueue().stream().filter(t -> t.getTicket().equals("free-pass")).count();
+            int fullCount = (int) festivalGate.getQueue().stream().filter(t -> t.getTicket().equals("full")).count();
+            int fullVipCount = (int) festivalGate.getQueue().stream().filter(t -> t.getTicket().equals("full-vip")).count();
 
             System.out.println(oneDayCount + " people have one-day tickets.");
             System.out.println(oneDayVipCount + " people have one-day-vip tickets.");
             System.out.println(freePassCount + " people have free-pass.");
             System.out.println(fullCount + " people have full pass.");
             System.out.println(fullVipCount + " people have full-vip pass.");
-
-        Thread.sleep(50);
     }
 
-    public FestivalStatisticsThread(BlockingQueue<FestivalAttendeeThread> queue, int gate) {
+    public FestivalStatisticsThread(BlockingQueue<TicketType> queue) {
         this.queue = queue;
-        this.gate = gate;
     }
 }
