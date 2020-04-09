@@ -1,0 +1,54 @@
+create table accommodation_fair_relations
+(
+    id                serial not null
+        constraint accommodation_fair_relations_pk
+            primary key,
+    id_accommodations integer
+        constraint accommodation_fair_relations_accommodations_id_fk
+            references accommodations,
+    id_room_fairs     integer
+        constraint accommodation_fair_relations_room_fairs_id_fk
+            references room_fairs
+);
+
+alter table accommodation_fair_relations
+    owner to postgres;
+
+create unique index accommodation_fair_relations_id_uindex
+    on accommodation_fair_relations (id);
+
+---------------------------------------------------------------
+
+create table accommodations
+(
+    id          serial not null
+        constraint accommodations_pk
+            primary key,
+    type        varchar default 32,
+    bed_type    varchar default 32,
+    max_guests  integer,
+    description varchar default 512
+);
+
+alter table accommodations
+    owner to postgres;
+
+create unique index accommodations_id_uindex
+    on accommodations (id);
+
+--------------------------------------------------------------
+
+create table room_fairs
+(
+    id     serial not null
+        constraint room_fairs_pk
+            primary key,
+    value  double precision,
+    season varchar default 32
+);
+
+alter table room_fairs
+    owner to postgres;
+
+create unique index room_fairs_id_uindex
+    on room_fairs (id);

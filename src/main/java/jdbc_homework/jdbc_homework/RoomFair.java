@@ -1,4 +1,4 @@
-package jdbc_homework;
+package jdbc_homework.jdbc_homework;
 
 public class RoomFair {
 

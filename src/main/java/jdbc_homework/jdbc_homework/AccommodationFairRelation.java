@@ -1,4 +1,4 @@
-package jdbc_homework;
+package jdbc_homework.jdbc_homework;
 
 public class AccommodationFairRelation {
     private int id;
@@ -30,7 +30,7 @@ public class AccommodationFairRelation {
     }
 
     public void setIdAccomodation(int idAccomodation) {
-        this.idAccomodation = accommodation.getId();
+        this.idAccomodation = idAccomodation;
     }
 
     public int getIdRoomFair() {
@@ -38,13 +38,12 @@ public class AccommodationFairRelation {
     }
 
     public void setIdRoomFair(int idRoomFair) {
-        this.idRoomFair = roomFair.getId();
+        this.idRoomFair = idRoomFair;
     }
 
-    public AccommodationFairRelation(/*int id, */int idAccomodation, int idRoomFair) {
-//        this.id = id;
-        this.idAccomodation = accommodation.getId();
-        this.idRoomFair = roomFair.getId();
+    public AccommodationFairRelation(int idAccomodation, int idRoomFair) {
+        this.idAccomodation = idAccomodation;
+        this.idRoomFair = idRoomFair;
     }
 
     public AccommodationFairRelation() {

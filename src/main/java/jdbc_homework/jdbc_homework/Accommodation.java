@@ -1,4 +1,4 @@
-package jdbc_homework;
+package jdbc_homework.jdbc_homework;
 
 public class Accommodation {
 
@@ -61,8 +61,7 @@ public class Accommodation {
         this.description = description;
     }
 
-    public Accommodation(/*int id, */String type, String bed_type, int max_guests, String description) {
-//        this.id = id;
+    public Accommodation(String type, String bed_type, int max_guests, String description) {
         this.type = type;
         this.bed_type = bed_type;
         this.max_guests = max_guests;
