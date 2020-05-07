@@ -2,6 +2,8 @@ package intro_to_java;
 
 import java.util.Scanner;
 
+//Change the implementation of the calculator from the previous meeting to use only if-else instead of switch.
+
 public class Calculator {
 
     public static void main(String[] args) {

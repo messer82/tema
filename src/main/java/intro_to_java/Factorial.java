@@ -2,6 +2,8 @@ package intro_to_java;
 
 import java.util.Scanner;
 
+//Calculate and display the factorial of a given number n. (ex: 4! = 1*2*3*4)
+
 public class Factorial {
     public static void main(String[] args) {
 

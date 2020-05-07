@@ -2,6 +2,8 @@ package intro_to_java;
 
 import java.util.Scanner;
 
+//Change the implementation of the calculator from the previous meeting to not stop after one calculation. (Hint: put switch inside a while loop)
+
 public class ContinuousCalculator {
 
     public static void main(String[] args) {

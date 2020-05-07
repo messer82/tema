@@ -6,13 +6,28 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+//Implement a phone application that is able to store contacts, send messages and make phone calls.
+//
+//Requirements
+//
+//All phones offer the following behavior:
+//
+//- you can create new contacts
+//
+//- you can see existing contacts
+//
+//- you can send a text message
+//
+//- you can see all messages for a specific contact
+//
+//- you can make a call
+//
+//- you can see all calls history
+
 public class PhoneUse {
 
     public static void main(String[] args) {
-/*     Am comentat aproape toate metodele, pentru a se putea distinge ce rulezi;
-       Daca crezi ca ar mai trebui modificat ceva (s-ar putea sa nu fi inteles eu bine vreo sarcina / conditie,
-       spune-mi, te rog, si refac / modific imediat
- */
+
         long leftLimit = 1L;
         long rightLimit = 16L;
 

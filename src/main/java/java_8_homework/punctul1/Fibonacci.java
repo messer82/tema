@@ -3,6 +3,8 @@ package java_8_homework.punctul1;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
+//Write a method that can generate the first 100 numbers from Fibonacci series using Java 8 streams which returns the sequence as an array of int.
+
 public class Fibonacci {
 
     public static void main(String[] args) {

@@ -2,6 +2,10 @@ package object_containers_homework.punctul2;
 
 import java.util.TreeSet;
 
+//You need to store Persoane in a TreeSet. Define 2 Comparators (one for name - nume and one for age-varsta) that will be used when creating the TreeSet;
+//
+//        Add Persoane to the TreeSet; iterate throug the treeset and print the name and the age;
+
 public class Store {
 
     public static void main(String[] args) {

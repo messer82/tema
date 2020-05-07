@@ -2,6 +2,8 @@ package intro_to_java;
 
 import java.util.Scanner;
 
+//Display the max digit from a number.
+
 public class MaxDigit {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

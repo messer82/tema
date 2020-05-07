@@ -2,6 +2,8 @@ package intro_to_java;
 
 import java.util.Scanner;
 
+//Display the smallest number from an array of number (2 versions: with normal for and with foreach)
+
 public class SmallestNumber {
 
     public static void main(String[] args) {

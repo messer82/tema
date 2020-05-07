@@ -2,9 +2,11 @@ package oop_homework_2.bubble_sort;
 
 import java.util.Arrays;
 
-//Stiu ca denumirile sunt prost facute, dar din pacate nu m-am gandit in avans la asta...
-//De asemenea am pierdut o vesnicie incercand sa printez fiecare reprezentant pe alta linie, si nu am reusit sa gasesc solutia.
-//Poate imi dai o idee.
+//Implement a bubble sort algorithm to sort an array of SalesRepresentative objects in descending order.
+// The sorting should be done based on the amount of revenue generated via sales.
+// Each rep has a number of sales, and a quota / sale.
+// After the sorting, the first object should be the rep with the most revenue generated.
+// The last object in the array should be the rep with the least revenue generated.
 
 public class SortingReps {
 

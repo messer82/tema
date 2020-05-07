@@ -4,6 +4,9 @@ import java.io.*;
 import java.time.LocalDate;
 import java.util.*;
 
+//Solve the remaining exercises from the last slide of Lambdas&Streams presentation (I pasted them also in the class we've written during course).
+// For each exercise create a separate method with an appropriate return type.
+
 public class StreamAndLambda {
 
     public static void main(String[] args) throws IOException {

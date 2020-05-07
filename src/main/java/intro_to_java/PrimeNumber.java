@@ -2,6 +2,8 @@ package intro_to_java;
 
 import java.util.Scanner;
 
+//Display all the prime numbers lower than a given number
+
 public class PrimeNumber {
     private static boolean isPrime(int number) {
 

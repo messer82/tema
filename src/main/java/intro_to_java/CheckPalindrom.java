@@ -2,6 +2,8 @@ package intro_to_java;
 
 import java.util.Scanner;
 
+//Check if a number is palindrom( e.g palindrom 1221, 34143)
+
 public class CheckPalindrom {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

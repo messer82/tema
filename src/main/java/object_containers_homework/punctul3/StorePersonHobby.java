@@ -2,6 +2,15 @@ package object_containers_homework.punctul3;
 
 import java.util.*;
 
+//You need to store some information about some persons: for one person, you need a list of his/her hobbies;
+//
+//        Define for Hobby a class that contains:
+//
+//        Name of hobby (String) – eq: cycling, swimming
+//        Frequency (int) – how many times a week they practice it
+//        List of Addresses where this hobby can be practiced (List<Adresa>)
+//        You will use a HashMap <Persoana, List<Hobby>>
+
 public class StorePersonHobby {
 
     public static void main(String[] args) {

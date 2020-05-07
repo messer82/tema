@@ -1,5 +1,7 @@
 package intro_to_java;
 
+//Write a method that checks if the array is square (i.e. every row has the same length as a itself).
+
 public class ArraySquare {
     public static boolean isSquare(int[][] a) {
         a = new int[][] {{2,3,5} , {3,2}};

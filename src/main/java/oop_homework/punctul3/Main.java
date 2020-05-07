@@ -3,6 +3,8 @@ package oop_homework.punctul3;
 import java.util.Arrays;
 import java.util.Random;
 
+//Implement the Bank payments application described in the Object Oriented Design Cheat Sheet pdf attached to the week 3 following the UML diagram in the file.
+
 public class Main {
     public static void main(String[] args) {
 
